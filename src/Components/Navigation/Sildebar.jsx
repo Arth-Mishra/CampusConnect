@@ -4,6 +4,8 @@ import { FaHome } from "react-icons/fa";
 import { RiGroupFill } from "react-icons/ri";
 import { FaDatabase } from "react-icons/fa";
 import { FaFeatherPointed } from "react-icons/fa6";
+import Feeds from "../Feed/Feeds";
+import PostForm from "../PostForm/PostForm";
 
 const Sidebar = () => {
     return (
@@ -38,7 +40,7 @@ const Sidebar = () => {
 
                             <Link to="/" className="flex ms-2 md:me-24">
                                 <img
-                                    src="src/assets\campuS.png"
+                                    src="src/assets/campuS.png"
                                     className="h-12 w-16 me-3 border border-white rounded-3xl bg-slate-600"
                                     alt="FlowBite Logo"
                                 />
@@ -143,10 +145,8 @@ const Sidebar = () => {
             </aside>
 
             <div className="p-6 sm:ml-64">
-                <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-
-
-                </div>
+                   <Feeds/>
+                   {/* <PostForm/> */}
             </div>
         </>
     );
