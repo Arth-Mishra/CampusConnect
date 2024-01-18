@@ -1,0 +1,153 @@
+*{
+    margin:0%;
+    padding: 0%;
+ }
+
+ .container_1,.container_2{
+    height: auto;
+    position: relative;
+    width: 100%;
+ }
+
+
+
+ .container_2 img{
+    width: 100%;
+    display: block;
+    height: 110vh;
+    
+   
+
+ }
+
+
+ 
+
+ .container_1 img{
+    width: 100%;
+    display: block;
+    height: 110vh;
+ }
+
+ .Heading_box{
+    position: absolute;
+    top:15%;
+    left: 22%;
+    /* top:50%;
+    left: 50%;
+    transform: translate(-50% ,-50%); */
+ }
+
+ /* .titlee{
+    font-size: 100px;
+    font-weight: 900;
+    background: linear-gradient(to right,red,blue);
+    
+    color:transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+    padding: 0%;
+    margin: 0%;
+    text-shadow: 0 0 60px rgba(255, 0, 0, 0.516);
+    animation: anima 1s infinite alternate;
+}
+
+
+@keyframes anima{
+    100%{
+        text-shadow: 0 0 60px rgba(55, 0, 255, 0.516);
+
+    }
+
+} */
+
+.Sub_Heading_1{
+    position: absolute;
+    top:55%;
+    left: 31%;
+    color: antiquewhite;
+    font-size: 20px;
+
+}
+
+
+.Sub_Heading_2{
+    position: absolute;
+    top:70%;
+    left: 28%;
+    color: rgba(255, 255, 255, 0.945);
+    font-size: 18px;
+   border-radius: 20px;
+    width:50vw;
+    text-align: center;
+    line-height: 2rem;
+    background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21);
+ 
+
+}
+
+.connect{
+    background: linear-gradient(to right,red,blue);
+    color:transparent;
+    -webkit-background-clip: text;
+    font-weight: 900;
+   
+    padding: 0%;
+    margin: 0%;
+    text-shadow: 0 0 60px rgba(255, 0, 0, 0.516);
+    animation: anima 1s infinite alternate;
+
+}
+
+.sub_heading_3{
+    position: absolute;
+    top:15%;
+    left: 10%;
+    color: rgb(247, 144, 0);
+    font-size: 3rem;
+    font-weight: 900;
+
+}
+
+.sub_heading_4{
+    position: absolute;
+    top:30%;
+    left: 10%;
+    color: antiquewhite;
+
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding-right: 50px;
+
+}
+
+.btn{
+    position: absolute;
+    top:70%;
+    left: 45%;
+
+    background: #f39c12;
+    color: #fff;
+    padding: 0.6rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    transition-duration: 0.4s;
+
+    
+
+}
+
+.btn:hover {
+    background: #fff;
+    box-shadow: 0px 2px 20px 10px #97B1BF;
+    color: #000;
+}
+
+/* button{
+    background-color: #f48e21;
+    border: none;
+    padding:10px;
+} */
