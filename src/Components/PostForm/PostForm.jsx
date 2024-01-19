@@ -4,7 +4,7 @@ const PostForm = () => {
     return (
         <>
 
-            <div className="max-w-3xl mx-auto bg-white p-5 rounded-md shadow-md mt-20">
+            <div className="max-w-3xl mx-auto  mt-40 mb-24 bg-white p-5 rounded-md shadow-md mt-20">
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
                         Title

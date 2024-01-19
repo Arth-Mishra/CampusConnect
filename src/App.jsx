@@ -9,8 +9,7 @@ import FrontPage from './Components/FrontPage/FrontPage';
 function App() {
   return (
     <Router>
-   
-
+      <div className="min-h-full w-full bg-[#9fbac4]">
       <Routes>
       <Route exact path='/' element={   <FrontPage/>} />
         <Route exact path='/login' element={<Login />} />
@@ -19,6 +18,7 @@ function App() {
         
 
       </Routes>
+      </div>
     </Router>
   )
 }

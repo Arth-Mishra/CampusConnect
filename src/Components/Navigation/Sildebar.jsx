@@ -10,7 +10,7 @@ import PostForm from "../PostForm/PostForm";
 const Sidebar = () => {
     return (
         <>
-            <nav className="fixed top-0 z-50 w-full bg-black overflow-hidden">
+            <nav className="fixed top-0 z-50 w-full bg-blue-950 overflow-hidden">
                 <div className="px-3 py-3 lg:px-5 lg:pl-3">
                     <div className="flex items-center justify-between">
 
@@ -40,8 +40,8 @@ const Sidebar = () => {
 
                             <Link to="/" className="flex ms-2 md:me-24">
                                 <img
-                                    src="src/assets/campuS.png"
-                                    className="h-12 w-16 me-3 border border-white rounded-3xl bg-slate-600"
+                                    src="src/assets/CampusLogo.png"
+                                    className="h-12 w-12 ml-4  border border-white rounded-full bg-slate-600"
                                     alt="FlowBite Logo"
                                 />
                             </Link>
@@ -51,21 +51,22 @@ const Sidebar = () => {
                         </div>
 
                         <div className="flex items-center space-x-4">
-                            <div className="flex items-center ms-4 font-semibold hover:text-blue-600 text-white">
+                            <div className="flex items-center ms-4 font-semibold hover:text-cyan-500 cursor-pointer text-white">
                                 <span>About</span>
                             </div>
                             <div>
                                 <button
                                     type="button"
-                                    className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                    className="flex text-sm w-6 h-6 bg-white rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                                     aria-expanded="false"
                                     data-dropdown-toggle="dropdown-user"
                                 >
-                                    <img
+                                    {/* <img
                                         className="w-8 h-8 rounded-full"
                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwnYnwftDUSjsQmLQvMBZ2pwDXhAJiIdfKvg&usqp=CAU"
                                         alt="user photo"
-                                    />
+                                    /> */}
+                                    <i className="fa-solid fa-user pt-1 w-12"></i>
                                 </button>
                             </div>
                         </div>
@@ -77,15 +78,15 @@ const Sidebar = () => {
 
             <aside
                 id="logo-sidebar"
-                className=" bg-rose-800 fixed top-2 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-fullz border-r sm:translate-x-"
+                className=" bg-blue-950 fixed top-2 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-fullz border-r sm:translate-x-"
                 aria-label="Sidebar"
             >
-                <div className="h-full px-3 pb-4 bg-rose-800">
+                <div className="h-full px-3 pb-4 bg-blue-950">
                     <ul className="space-y-2 font-medium">
                         <li>
                             <Link
                                 to="/"
-                                className="flex items-center p-4 rounded-lg dark:text-white hover:bg-indigo-500"
+                                className="flex items-center p-4 rounded-lg dark:text-white hover:bg-cyan-600"
                             >
                                 <FaHome className="w-6 h-6" />
                                 <span className="ms-3 ">Home</span>
@@ -95,7 +96,7 @@ const Sidebar = () => {
                         <li>
                             <Link
                                 to="/"
-                                className="flex items-center p-4 rounded-lg dark:text-white hover:bg-indigo-500"
+                                className="flex items-center p-4 rounded-lg dark:text-white hover:hover:bg-cyan-600"
                             >
                                 <RiGroupFill className="w-8 h-6" />
                                 <button
@@ -111,14 +112,14 @@ const Sidebar = () => {
                         <li>
                             <Link
                                 to="/"
-                                className="flex items-center p-4 rounded-lg dark:text-white hover:bg-indigo-500"
+                                className="flex items-center p-4 rounded-lg dark:text-white hover:hover:bg-cyan-600"
                             >
                                 <FaDatabase className="w-8 h-6" />
                                 <button
                                     id="dropdownHoverButtons"
                                     className="px-3 text-center inline-flex items-center w-64 transition duration-700 ease-in-out"
                                 >
-                                    Resourses
+                                    Resources
 
                                 </button>
                             </Link>
@@ -127,7 +128,7 @@ const Sidebar = () => {
                         <li>
                             <Link
                                 to="/"
-                                className="flex items-center p-4 rounded-lg dark:text-white hover:bg-indigo-500 "
+                                className="flex items-center p-4 rounded-lg dark:text-white hover:hover:bg-cyan-600 "
                             >
                                 <FaFeatherPointed className="w-8 h-6" />
                                 <button
