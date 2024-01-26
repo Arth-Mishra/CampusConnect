@@ -11,18 +11,20 @@ import PostForm from './Components/PostForm/PostForm';
 function App() {
 
   return (
-    <Router>
-      <div className="min-h-full w-full bg-[#9fbac4]">
-      <Routes>
-      <Route exact path='/' element={<FrontPage/>} />
-        <Route exact path='/login' element={<Login />} />
-        <Route exact path='/register' element={<Register />} />
-        <Route exact path='/home' element={<Feeds/>} />
-        <Route exact path='/PostFeedback' element={<PostForm/>} />
-        <Route exact path='/Connect' element={<Community/>} />
-      </Routes>
-      </div>
-    </Router>
+    <>
+     <Router>
+       <div className="min-h-full w-full bg-[#9fbac4]">
+       <Routes>
+       <Route exact path='/' element={<FrontPage/>} />
+         <Route exact path='/login' element={<Login />} />
+         <Route exact path='/register' element={<Register />} />
+         <Route exact path='/home' element={<Feeds/>} />
+         <Route exact path='/PostFeedback' element={<PostForm/>} />
+         <Route exact path='/Connect' element={<Community/>} />
+       </Routes>
+       </div>
+     </Router>
+    </>
   )
 }
 
