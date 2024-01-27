@@ -1,10 +1,20 @@
-const mongoose=require('mongoose');
-const mongoURL="mongodb+srv://arthmishra1504:CampusConnect24@cluster0.2mjvlhn.mongodb.net/"
+const mongoose = require('mongoose');
+const mongoDBUrl = "mongodb+srv://arthmishra1504:CampusConnect24@cluster0.2mjvlhn.mongodb.net/CampusConnect";
 
-const connectToMongo=()=>{
-    mongoose.connect(mongoURL,()=>{
-        console.log("Connected to Mongo successfully");
-    })
-}
+const connectToMongo = async () => {
+    try {
+        await mongoose.connect(mongoDBUrl);
 
-module.exports=connectToMongo;
+        // Check if the connection was successful
+
+        if (mongoose.connection.readyState === 1) {
+            console.log('Connected to CampusConnect MongoDB DataBase');
+        } else {
+            console.error('Error connecting to MongoDB');
+        }
+
+    } catch (error) {
+        console.error('Error connecting to MongoDB:', error.message);
+    }
+};
+module.exports = connectToMongo;
