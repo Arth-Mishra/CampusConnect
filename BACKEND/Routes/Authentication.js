@@ -15,7 +15,7 @@ router.post('/createUser', [
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        return res.status(400).json({ status, errors: errors.array()});
+        return res.status(400).json({ status, errors: errors.array() });
     }
 
     try {
@@ -85,5 +85,57 @@ router.post('/login', [
             res.status(500).json({ message: 'Internal Server error in Login API' });
         }
     });
+
+
+// Update User Data API
+
+router.put('/updateUser', [
+    body('email').isEmail(),
+    body('password').isLength({ min: 5 }),
+], async (req, res) => {
+    const status = 301;
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ status, errors: errors.array() });
+    }
+
+    try {
+        const { enrollment ,email, password } = req.body;
+
+        let user = await Student.findOne({ enrollment });
+
+        if (!user) {
+            return res.status(404).json({ status, error: "User not found" });
+        }
+
+        // If enrollment is being updated, check if the new enrollment already exists
+
+        if (email !== user.email) {
+
+            const existingUserEmail = await Student.findOne({ email });
+            if (existingUserEmail) {
+                return res.status(400).json({ status, error: "Sorry! a user with this email already exists" });
+            }
+        }
+
+        // Update user data
+        user.email = email;
+
+        if (password) {
+            const salt = await bcrypt.genSalt(10);
+            const secPass = await bcrypt.hash(password, salt);
+            user.password = secPass;
+        }
+
+        await user.save();
+        console.log(user);
+        res.status(200).json({ message: "User data updated successfully", user });
+
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send("Some error occurred");
+    }
+});
 
 module.exports = router;
