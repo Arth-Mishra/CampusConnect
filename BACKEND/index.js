@@ -13,7 +13,7 @@ app.use(express.json());
 app.use('/api/auth', require('./Routes/Authentication.js'));
 // app.use('/api/feed', require('./Routes/feed.js'));
 // app.use('/api/community', require('./Routes/community.js'));
-// app.use('/api/internship', require('./Routes/internship.js'));
+app.use('/api/internship', require('./Routes/internship.js'));
 // app.use('/api/supplies', require('./Routes/supplies.js'));
 
 const startServer = async () => {
