@@ -20,9 +20,7 @@ router.post('/createUser', [
 
     try {
         const { name, email, enrollment, password } = req.body;
-
         let user = await Student.findOne({ enrollment });
-
         if (user) {
             return res.status(400).json({ status, error: "Sorry! a user with this enrollment already exists" });
         }
@@ -137,5 +135,7 @@ router.put('/updateUser', [
         res.status(500).send("Some error occurred");
     }
 });
+
+
 
 module.exports = router;

@@ -4,6 +4,8 @@ import { FaHome } from "react-icons/fa";
 import { RiGroupFill } from "react-icons/ri";
 import { FaDatabase } from "react-icons/fa";
 import { FaFeatherPointed } from "react-icons/fa6";
+import { IoLogOut } from "react-icons/io5";
+
 import Feeds from "../Feed/Feeds";
 import PostForm from "../PostForm/PostForm";
 
@@ -39,7 +41,7 @@ const Sidebar = () => {
 
               <Link to="/home" className="flex ms-2 md:me-24">
                 <img
-                  src="src/assets/CampusLogo.png"
+                  src="src/assets/C.png"
                   className="h-12 w-12 ml-4  hover:scale-105 border border-white rounded-full bg-slate-600"
                   alt="CampusConnect Logo"
                 />
@@ -61,8 +63,11 @@ const Sidebar = () => {
                 <span>About</span>
               </div>
               <div>
-                <div>
-                  <Link to="/profile">
+                <div
+                  className=" hover:scale-105 flex items-center ms-4 font-semibold hover:text-cyan-500 cursor-pointer text-white"
+                  s
+                >
+                  {/* <Link to="/profile">
                     <img
                       id="dropdownHoverButton"
                       type="button"
@@ -73,8 +78,8 @@ const Sidebar = () => {
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa4AhCCgcbwRr3UyrRRZ8BI6CSwNKCsIFa8TCaHXCYAA&s"
                       alt="User dropdown"
                     />
-                  </Link>
-                  {/* <i className="fa-solid fa-user pt-1 w-12"></i> */}
+                  </Link> */}
+                  <i className="fa-solid fa-user pt-1 w-12"></i>
                 </div>
               </div>
             </div>
@@ -82,29 +87,37 @@ const Sidebar = () => {
         </div>
       </nav>
       <div
-                id="dropdownHover"
-                className="z-50 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44  dark:bg-gray-700 dark:divide-gray-600"
+        id="dropdownHover"
+        className="z-50 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44  dark:bg-gray-700 dark:divide-gray-600"
+      >
+        <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+          <div>Nikhil Sharma</div>
+          <div className="text-orange-500 font-medium truncate">
+            nksharma@gmail.com
+          </div>
+        </div>
+        <ul
+          className=" text-sm text-gray-700 dark:text-gray-200"
+          aria-labelledby="avatarButton"
+        >
+          <li>
+            <a
+              href="#"
+              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >
-                <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                    <div>Nikhil Sharma</div>
-                    <div className="text-orange-500 font-medium truncate">nksharma@gmail.com</div>
-                </div>
-                <ul className=" text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
-                    <li>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Account
-                        </a>
-                    </li>
-                </ul>
-                <div className="py-1">
-                    <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                        Sign out
-                    </a>
-                </div>
-            </div>
+              Account
+            </a>
+          </li>
+        </ul>
+        <div className="py-1">
+          <a
+            href="#"
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+          >
+            Sign out
+          </a>
+        </div>
+      </div>
 
       {/* Side Bar  */}
 
@@ -166,6 +179,20 @@ const Sidebar = () => {
                   className="px-3 text-center inline-flex items-center w-64 transition duration-700 ease-in-out"
                 >
                   Internship
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                className="flex items-center mt-52 p-4 rounded-lg dark:text-white hover:hover:bg-cyan-600 "
+              >
+                <IoLogOut className="w-8 h-6" />
+                <button
+                  id="dropdownHoverButtons"
+                  className="px-3 text-center inline-flex items-center w-64 transition duration-700 ease-in-out"
+                >
+                  Log Out
                 </button>
               </Link>
             </li>
