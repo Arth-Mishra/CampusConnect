@@ -9,6 +9,7 @@ app.use(express.json());
 // Available Routes
 app.use('/api/auth', require('./Routes/Authentication.js'));
 app.use('/admin/',require('./Routes/admin.js'));
+app.use('/api/feeds',require('./Routes/feed.js'));
 // app.use('/api/feed', require('./Routes/feed.js'));
 // app.use('/api/community', require('./Routes/community.js'));
 // app.use('/api/internship', require('./Routes/internship.js'));

@@ -2,8 +2,8 @@ const express=require('express');
 const { body, validationResult } = require('express-validator');
 const Admin =require('../Modals/Admin');
 const Student=require('../Modals/Student');
-const router=express.Router();
 
+const router=express.Router();
 
 //Route 1
 router.post('/CreateAdmin',async(req,res)=>{
@@ -66,6 +66,17 @@ router.get('/GetStudentList',async(req,res)=>{
     }
     console.log(students);
     res.status(200).json({message:students});
+})
+
+//Route 4
+router.delete("/DeleteStudent",async(req,res)=>{
+    const {enrollment}= req.body;
+    let student=await Student.deleteOne({enrollment});
+    if(!student){
+         return res.status(404).send("No student with this enrollment found");
+    }
+    console.log(student);
+    res.status(200).send("Student Deleted Successfully");
 })
 
 module.exports = router;

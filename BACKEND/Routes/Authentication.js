@@ -3,6 +3,9 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 const Student = require("../Modals/Student");
+const jwt=require('jsonwebtoken');
+const fetchUser = require('../MiddleWare/fetchUser');
+const JWT_SECRET="CampusConnect24"
 
 //Create Student Data
 router.post('/createUser', [
@@ -34,9 +37,15 @@ router.post('/createUser', [
             enrollment: enrollment,
             password: secPass,
         });
+        const data={
+            user:{
+                enrollment:user.enrollment
+            }
+        }
+        const auth_Token=jwt.sign(data,JWT_SECRET);
 
         console.log(user);
-        res.status(200).json({ message: "User is created successfully", user });
+        res.status(200).json({ user, auth_Token });
 
     } catch (error) {
         console.log(error.message);
@@ -72,8 +81,16 @@ router.post('/login', [
             // Password Check
 
             const isPasswordValid = await bcrypt.compare(password, studentData.password);
+            const data={
+                user:{
+                    enrollment:studentData.enrollment
+                }
+            }
+
+            const auth_Token=jwt.sign(data,JWT_SECRET);
+
             if (isPasswordValid) {
-                res.status(200).json({ message: 'Login successful' });
+                res.status(200).json({ message: 'Login successful', auth_Token });
             } else {
                 res.status(401).json({ message: 'Invalid Password' });
             }
@@ -135,6 +152,24 @@ router.put('/updateUser', [
         res.status(500).send("Some error occurred");
     }
 });
+
+
+//Get Student Information
+router.get('/getStudent',fetchUser,async(req,res)=>{
+    try {
+        const studentId=req.user.enrollment;
+        console.log(studentId)
+        const student=await Student.findOne({enrollment:studentId});
+        if(!student){
+            return res.send("Wrong authtoken");
+        }
+        res.send(student);
+        console.log(student);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Internal Server Error");
+    }
+})
 
 
 

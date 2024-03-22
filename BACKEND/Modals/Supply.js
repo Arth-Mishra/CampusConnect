@@ -2,14 +2,10 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const FeedsSchema = new Schema({
+const SupplySchema = new Schema({
     enrollment: {
         type: String,
         required: true
-    },
-    username:{
-        type:String,
-        required:true
     },
     title: {
         type: String,
@@ -17,7 +13,12 @@ const FeedsSchema = new Schema({
     },
     description: {
         type: String,
-        required: true
+        required: true,
+      
+    },
+    files:{
+        type:[String],
+        required:false
     },
     date: {
         type: Date,
@@ -25,4 +26,4 @@ const FeedsSchema = new Schema({
     },
 });
 
-module.exports = mongoose.model('feeds', FeedsSchema);
+module.exports = mongoose.model('supply',SupplySchema);

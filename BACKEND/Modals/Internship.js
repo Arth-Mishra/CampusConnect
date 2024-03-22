@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const InternshipSchema = new Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+    enrollment: {
+        type: String,
+        required: true
     },
     job_title: {
         type: String,
